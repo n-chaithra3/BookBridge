@@ -1,0 +1,39 @@
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+body{background:#f7f5f0;color:#222}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 48px;background:#fff;border-bottom:1px solid #e5e0d5}
+.logo{font-weight:bold;font-size:22px;color:#1e3a5f}
+nav a{margin-left:22px;color:#444;text-decoration:none;font-size:14px}
+.btn{background:#1e3a5f;color:#fff;padding:10px 20px;border-radius:6px;border:0;font-size:14px;text-decoration:none;display:inline-block}
+.btn.o{background:#fff;color:#1e3a5f;border:1px solid #1e3a5f}
+.hero{display:flex;gap:40px;padding:60px 48px;align-items:center}
+.hero h1{font-size:46px;color:#1e3a5f;line-height:1.15;margin:14px 0}
+.tag{font-size:12px;letter-spacing:1px;color:#c26b2c;font-weight:bold}
+.hero p{color:#555;font-size:16px;max-width:460px;margin-bottom:24px}
+.stats{display:flex;gap:36px;margin-top:30px}.stats b{font-size:24px;color:#1e3a5f;display:block}.stats span{font-size:12px;color:#777}
+.stack{flex:1;display:flex;gap:14px;justify-content:center;align-items:flex-end}
+.book{width:90px;border-radius:4px 8px 8px 4px;color:#fff;font-size:12px;padding:12px 8px;font-weight:bold;box-shadow:3px 4px 10px rgba(0,0,0,.2)}
+.wrap{padding:36px 48px}.wrap h2{color:#1e3a5f;font-size:28px;margin-bottom:6px}
+.filters{display:flex;gap:10px;margin:18px 0 24px}.filters input,.filters select{padding:9px 12px;border:1px solid #ccc;border-radius:6px;font-size:14px;background:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:10px;padding:14px;border:1px solid #e5e0d5}
+.cover{height:110px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;text-align:center;padding:10px;margin-bottom:12px}
+.card h4{font-size:15px;margin-bottom:4px}.card small{color:#777;font-size:12px;display:block}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.price{font-weight:bold;color:#1e3a5f;font-size:18px}
+.badge{font-size:11px;padding:3px 8px;border-radius:10px;background:#e7f1e8;color:#2d6a3e}
+.login{max-width:380px;margin:70px auto;background:#fff;padding:36px;border-radius:12px;border:1px solid #e5e0d5}
+.login h2{color:#1e3a5f;margin-bottom:6px}.login p{color:#777;font-size:14px;margin-bottom:22px}
+.login label{font-size:13px;color:#444;display:block;margin:12px 0 6px}.login input,.login select{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px}
+.login .btn{width:100%;margin-top:22px}
+.form{max-width:460px;margin:40px auto;background:#fff;padding:32px;border-radius:12px;border:1px solid #e5e0d5}
+.form h2{color:#1e3a5f;margin-bottom:16px}
+.form label{font-size:13px;color:#444;display:block;margin:12px 0 6px}
+.form input,.form select{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:14px}
+.form .btn{width:100%;margin-top:20px;text-align:center;cursor:pointer}
+.msg{font-size:13px;margin-top:12px;color:#b42318;min-height:18px}
+.btn.sm{padding:6px 12px;font-size:12px;cursor:pointer}
+.list{background:#fff;border:1px solid #e5e0d5;border-radius:10px;margin-top:12px}
+.list table{width:100%;border-collapse:collapse;font-size:14px}.list th,.list td{padding:10px 14px;text-align:left;border-bottom:1px solid #f0ece4}
+.status{font-size:12px;padding:3px 10px;border-radius:10px;background:#fdf1e6;color:#c26b2c}
+.status.Sold,.status.Accepted{background:#e7f1e8;color:#2d6a3e}.status.Rejected{background:#fbeaea;color:#b42318}
+.empty{color:#888;padding:20px;text-align:center}
+nav a{cursor:pointer}
