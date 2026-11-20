@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Sell a Book - BookBridge</title><link rel="stylesheet" href="css/style.css"></head>
+<body><nav id="nav"></nav>
+<div class="form"><h2>Sell a Book</h2>
+<label>Book Title</label><input id="title" placeholder="e.g. Operating System Concepts">
+<label>Author</label><input id="author">
+<label>Price (₹)</label><input id="price" type="number" min="1">
+<label>Department</label><select id="department"><option>CSE</option><option>ISE</option><option>ECE</option><option>Basic Science</option></select>
+<label>Semester</label><select id="semester"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+<label>Condition</label><select id="condition"><option>Like New</option><option>Good</option><option>Fair</option></select>
+<a class="btn" onclick="addBook()">Add Listing</a><div class="msg" id="msg"></div></div>
+<script src="js/api.js"></script>
+<script>
+requireLoginPage();
+async function addBook() {
+  const book = { title: title.value, author: author.value, price: Number(price.value),
+    department: department.value, semester: Number(semester.value), condition: condition.value };
+  try {
+    await api('/api/books', { method: 'POST', body: JSON.stringify(book) });
+    location.href = 'books.html';
+  } catch (err) { msg.textContent = err.message; }
+}
+</script></body></html>
