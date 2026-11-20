@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>BookBridge</title><link rel="stylesheet" href="css/style.css"></head>
+<body><nav id="nav"></nav>
+<div class="hero"><div><div class="tag">CAMPUS BOOK EXCHANGE</div><h1>Pass it on.<br>Read it again.</h1>
+<p>Buy and sell used textbooks with students from your own college. Save money, reduce waste, and find the books you need for this semester.</p>
+<a class="btn" href="books.html">Browse Books →</a> <a class="btn o" href="sell.html">Sell a Book</a>
+<div class="stats"><div><b id="count">0</b><span>Books listed</span></div><div><b id="depts">0</b><span>Departments</span></div><div><b>50%</b><span>Avg. savings</span></div></div></div>
+<div class="stack"><div class="book" style="height:220px;background:#1e3a5f">Data Structures</div><div class="book" style="height:250px;background:#c26b2c">Operating Systems</div><div class="book" style="height:200px;background:#2d6a3e">DBMS</div><div class="book" style="height:235px;background:#7a3e6c">Computer Networks</div></div></div>
+<script src="js/api.js"></script>
+<script>
+api('/api/books').then(books => {
+  document.getElementById('count').textContent = books.length;
+  document.getElementById('depts').textContent = new Set(books.map(b => b.department)).size;
+}).catch(() => {});
+</script></body></html>
