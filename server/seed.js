@@ -1,5 +1,4 @@
 // Adds demo users and books. Run only on a development database: npm run seed
-require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const User = require('./models/User');
@@ -7,7 +6,7 @@ const Book = require('./models/Book');
 const Request = require('./models/Request');
 
 async function seed() {
-  await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/bookbridge');
+  await mongoose.connect('mongodb://127.0.0.1:27017/bookbridge');
   await Promise.all([User.deleteMany(), Book.deleteMany(), Request.deleteMany()]);
 
   const hash = await bcrypt.hash('password123', 10);
