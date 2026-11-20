@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>My Requests - BookBridge</title><link rel="stylesheet" href="css/style.css"></head>
+<body><nav id="nav"></nav>
+<div class="wrap"><h2>My Requests</h2>
+<h3 style="margin-top:20px;color:#444">Books I requested</h3><div class="list" id="sent"></div>
+<h3 style="margin-top:28px;color:#444">Requests for my books</h3><div class="list" id="received"></div></div>
+<script src="js/api.js"></script>
+<script>
+requireLoginPage();
+async function load() {
+  const { sent, received } = await api('/api/requests/mine');
+  document.getElementById('sent').innerHTML = sent.length ? '<table><tr><th>Book</th><th>Price</th><th>Status</th></tr>' +
+    sent.map(r => `<tr><td>${r.book ? r.book.title : '-'}</td><td>₹${r.book ? r.book.price : '-'}</td><td><span class="status ${r.status}">${r.status}</span></td></tr>`).join('') + '</table>'
+    : '<div class="empty">You have not requested any books yet.</div>';
+  document.getElementById('received').innerHTML = received.length ? '<table><tr><th>Book</th><th>Buyer</th><th>Status</th><th></th></tr>' +
+    received.map(r => `<tr><td>${r.book.title}</td><td>${r.buyer.name} (${r.buyer.email})</td><td><span class="status ${r.status}">${r.status}</span></td><td>${r.status === 'Pending'
+      ? `<a class="btn sm" onclick="update('${r._id}','Accepted')">Accept</a> <a class="btn o sm" onclick="update('${r._id}','Rejected')">Reject</a>` : ''}</td></tr>`).join('') + '</table>'
+    : '<div class="empty">No one has requested your books yet.</div>';
+}
+async function update(id, status) {
+  await api('/api/requests/' + id, { method: 'PATCH', body: JSON.stringify({ status }) });
+  load();
+}
+load();
+</script></body></html>
