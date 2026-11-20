@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Browse Books - BookBridge</title><link rel="stylesheet" href="css/style.css"></head>
+<body><nav id="nav"></nav>
+<div class="wrap"><h2>Available Books</h2><small style="color:#777">Second-hand books listed by students on campus</small>
+<div class="filters">
+<input id="search" placeholder="Search by title or author" style="width:280px">
+<select id="department"><option value="">All Departments</option><option>CSE</option><option>ISE</option><option>ECE</option><option>Basic Science</option></select>
+<select id="semester"><option value="">All Semesters</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+<select id="condition"><option value="">Condition: Any</option><option>Like New</option><option>Good</option><option>Fair</option></select>
+</div>
+<div class="grid" id="grid"></div><div class="msg" id="msg"></div></div>
+<script src="js/api.js"></script>
+<script src="js/books.js"></script>
+</body></html>
