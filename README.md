@@ -5,7 +5,7 @@
 BookBridge is a simple full-stack web app where college students can list their used textbooks and other students can find and request them.
 
 ## Features
-- Register and login (JWT authentication, passwords hashed with bcryptjs)
+- Register and login (JWT authentication, passwords hashed with bcryptjs — no API keys or secret files needed)
 - Browse books with search and filters (department, semester, condition)
 - Sell a book: add a listing with price and condition
 - Send a buy request; seller accepts or rejects; accepted books are marked **Sold**
@@ -27,13 +27,12 @@ BookBridge is a simple full-stack web app where college students can list their 
    ```bash
    npm install
    ```
-3. Copy `.env.example` to `.env` and change the values if needed.
-4. (Optional) Add demo data:
+3. (Optional) Add demo data:
    ```bash
    npm run seed
    ```
    Demo login: `arjun@college.edu` / `password123` (admin: `admin@college.edu` / `password123`)
-5. Start the app:
+4. Start the app:
    ```bash
    npm start
    ```
@@ -73,6 +72,5 @@ BookBridge/
 │   ├── routes/ (auth.js, books.js, requests.js)
 │   └── middleware/auth.js
 ├── tests/api.test.js
-├── .env.example
 └── package.json
 ```
